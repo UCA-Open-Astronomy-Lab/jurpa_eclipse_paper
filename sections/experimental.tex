@@ -1,3 +1,42 @@
 \subsection{\label{sec:radio}The Radio Lightcurve}
-
+%Image of Raw Data
+Minimal cloud cover and no sustained winds on the day of the eclipse contributed to a nearly issue free radio lightcurve.
+We addressed 3 sources of error in our project:
+A strong gust of wind pushed the telescope off target for a few seconds.
+An issue with the accuracy of our polar alignment, causing the telescope to be slightly off target by the end of observation.
+Local sources of interference.
+In order for this raw data to be compared to the optical lightcurve, these errors must be addressed.
+A number of data analysis methods were used to do this:
+%%Image of linear adjustment functino being added to raw data?
+\paragraph{Linear Adjustment function}
+The first step in our data analysis is to correct for the tracking error.
+We found average Analog to Digital Unit (ADU) counts for the duration of time after 4th contact and average ADU counts for the same duration of time before 1st contact.
+We then created a linear function that shifts the data at the end of the lightcurve upward and decreases in effect to 0 at 1st contact.
+%Image of smoothing being done to above image?
+\paragraph{Smoothing}
+The next step is to smooth the data.
+Our choice to smooth the data came from the need to reduce noise/random spikes in the data to get a better idea of the shape of the curve.
+We chose to apply a Savitzky-Golay filter to do this.
+%Image of normalization being done to above image?
+\paragraph{Normalization}
+The final step is to normalize the data.
+This is done after smoothing to avoid issues with noise spikes.
+Converting the ADU counts to a relative brightness makes it possible to compare with the optical lightcurves.
+\\
+Now that the raw data has been refined, a neat radio lightcurve of the eclipse remains.
 \subsection{\label{sec:optical}The Optical Lightcurve}
+As a comparison to the radio lightcurve created in the previous section, we have 3 sources of optical lightcurve data: A livestream lightcurve using a solar filter-equipped optical telescope, a Vernier Light Sensor (LS-BTA) pointed straight up at the sky, and a theoretical lightcurve created using the software Stellarum.
+\paragraph{The Theoretical Lightcurve}
+Our comparison lightcurve is a theoretical light curve from the software Stellarium, a free open source planetarium capable of calculating the eclipse magnitude and eclipse percentage from our observing location.
+Using the Stellarium API, we extracted the eclipse percentage at 1000 points in time, from shortly before first contact, to shortly after fourth contact.
+\paragraph{The Livestream Lightcurve}
+The livestream lightcurve was created by grayscaling the image of the eclipse and using Otsu thresholding to only count pixels above a certain value.
+To get the time for each data point, we took an image of the in-video clock at the same time we counted the pixels of the eclipse and used computer vision to recognise the characters in the clock, giving us the time at which the frame was pixel-counted.
+The number of pixels of the solar disk over time can then be normalized to a relative brightness.
+\paragraph{The Light Sensor Lightcurve}
+The light sensor used to collect data during the solar eclipse was the Vernier Light Sensor (LS-BTA) pointed at the sky.
+Dr. Todd Abel and Shane Ayotte provided the light sensor data in the form of a .csv file, which we normalized to relative brightness.
+Because the light sensor data had timestamps included, we used it to confirm the accuracy of our other lightcurves timings.
+\\
+By stacking the lightcurves, we observed that all three had a very similar shape, with heavy overlap between the theoretical and livestream lightcurves.
+This implies that our lightcurves are accurate and can be used to compare with our radio lightcurve to determine the size of the sun’s radio emission.
