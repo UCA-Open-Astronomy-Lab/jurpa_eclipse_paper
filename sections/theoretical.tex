@@ -14,6 +14,11 @@ In order to determine the apparent radius of the sun at \unit[1420]{MHz}, we can
 
 To accomplish this, we first downloaded high-accuracy ephemeris data from the JPL Horizons On-Line Ephemeris System. Using the angular radii of both the sun and moon along with the angular separation between the two, we calculated the obscured area of the solar disk at 2000 points in time during the eclipse using the geometric relationships shown in Figure \ref{fig:eclipse_geometry}.
 
+\begin{figure}
+  \includegraphics[width=0.5\textwidth]{figures/drawing}
+  \caption{\label{fig:eclipse_geometry} The geometric relationships used to calculate the obscuration of the sun.}
+\end{figure}
+
 \begin{equation}
   A_1 = \frac{1}{2}r_{\odot}^2\left(\phi_1 - \sin\phi_1\right)
 \end{equation}
