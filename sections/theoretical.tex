@@ -4,15 +4,17 @@ In order to check the validity of our livestream-derived optical lightcurve, we 
 We used the free, open-source planetarium software \texttt{Stellarium} to achieve this.
 After setting the time, date and location of our radio telescope in \texttt{Stellarium}, we queried the software's API to step the simulation time forward and extracted the eclipse percentage for 1000 points in time, starting before first contact and ending after fourth contact.
 
-The resulting theoretical lightcurve is shown in Figure \ref{fig:livestream_stellarium_comparison}, alongside the eclipse obscruation derived from the UCA Observatory livestream.
+The resulting theoretical lightcurve is shown in Figure \ref{fig:livestream_stellarium_comparison}, alongside the eclipse obscuration derived from the UCA Observatory livestream.
 The agreement between the two is excellent, validating our optical eclipse lightcurve.
+% This figure should include the Livestream, Light Sensor, and Stellarium data.
 
 
 \subsection{\label{sec:theoreticalLightcurves}Theoretical Lightcurve Comparison}
 
 In order to determine the apparent radius of the sun at \unit[1420]{MHz}, we can compare our observed radio lightcurve to a theoretical lightcurve where the radius of the sun has been changed.
-
-To accomplish this, we first downloaded high-accuracy ephemeris data from the JPL Horizons On-Line Ephemeris System. Using the angular radii of both the sun and moon along with the angular separation between the two, we calculated the obscured area of the solar disk at 2000 points in time during the eclipse using the geometric relationships shown in Figure \ref{fig:eclipse_geometry}.
+To accomplish this, we first downloaded high-accuracy ephemeris data from the JPL Horizons On-Line Ephemeris System. 
+Using the angular radii of both the sun and moon along with the angular separation between the two, we calculated the obscured area of the solar disk at 2000 points in time during the eclipse using the geometric relationships shown in Figure \ref{fig:eclipse_geometry}.
+These relationships are also given by Equations 1 through 4.
 
 \begin{figure}
   \includegraphics[width=0.5\textwidth]{figures/drawing}
@@ -33,4 +35,10 @@ To accomplish this, we first downloaded high-accuracy ephemeris data from the JP
   \phi_2 = 2\cos^{-1}\left(\frac{x^2 - r_{\odot}^2 + r_{m}^2}{2r_{m}x}\right)
 \end{equation}
 
-Our best-fit curve has an apparent solar radius of $R_{\mathrm{1420}} = 1.27 R_{\odot}$.
+Using these relationships, we can create theoretical lightcurves for varying solar radii.
+We calculated the obscured area of the solar disk at 2000 points in time during the eclipse.
+Our data found that the radio lightcurve reached a minimum of 30.9\% of the total solar flux during totality, whereas the optical lightcurve reached 0\%.
+Assuming a uniform disk brightness, we created theoretical lightcurves for solar radii ranging from $R = 1.0 R_{\odot}$ to $R = 1.5 R_{\odot}$.
+These theoretical lightcurves, shown in Figure \ref{fig:TheoreticalVsRadio}, helped us match the dip in relative difference in brightness within the radio lightcurve.
+Our model does not take into acount the true non-uniformity of the solar surface, nor does it account for limb darkening.
+We found that the best-fit curve has an apparent solar radius of $R_{\mathrm{1420}} = 1.27 R_{\odot}$.
