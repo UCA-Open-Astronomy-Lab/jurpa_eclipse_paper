@@ -10,7 +10,7 @@ We then created a linear function that shifts the data at the end of the lightcu
 \paragraph{Smoothing}
 The next step is to smooth the data.
 Our choice to smooth the data came from the need to reduce noise/random spikes in the data to get a better idea of the shape of the curve.
-We chose to apply a Savitzky-Golay filter to do this.
+We chose to apply a Savitzky-Golay\cite{savitzky_golay_1964} filter to do this, which smoothes the data and removes noise.
 \paragraph{Normalization}
 The final step is to normalize the data.
 Normalization is the process by which the data of a graph is scaled by a constant such that the highest points are equal to 100, essentially making the data a percentage of its highest value.
