@@ -1,20 +1,16 @@
 \subsection{\label{sec:radio}The Radio Lightcurve}
-%Image of Raw Data
 Minimal cloud cover and no sustained winds on the day of the eclipse contributed to a nearly issue free radio lightcurve.
 We addressed 3 sources of error in our project: A strong gust of wind pushed the telescope off target for a few seconds, an issue with the accuracy of our polar alignment, causing the telescope to be slightly off target by the end of observation, and local sources of interference.
 In order for this raw data to be compared to the optical lightcurve, these errors must be addressed.
 A number of data analysis methods were used to do this:
-%%Image of linear adjustment functino being added to raw data?
 \paragraph{Linear Adjustment function}
 The first step in our data analysis is to correct for the tracking error.
 We found average Analog to Digital Unit (ADU) counts for the duration of time after 4th contact and average ADU counts for the same duration of time before 1st contact.
 We then created a linear function that shifts the data at the end of the lightcurve upward and decreases in effect to 0 at 1st contact.
-%Image of smoothing being done to above image?
 \paragraph{Smoothing}
 The next step is to smooth the data.
 Our choice to smooth the data came from the need to reduce noise/random spikes in the data to get a better idea of the shape of the curve.
 We chose to apply a Savitzky-Golay filter to do this.
-%Image of normalization being done to above image?
 \paragraph{Normalization}
 The final step is to normalize the data.
 Normalization is the process by which the data of a graph is scaled by a constant such that the highest points are equal to 100, essentially making the data a percentage of its highest value.
