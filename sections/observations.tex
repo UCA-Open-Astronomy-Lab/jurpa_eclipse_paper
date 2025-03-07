@@ -1,5 +1,4 @@
 \subsection{\label{sec:radio}The Radio Lightcurve}
-%Image of Raw Data
 Radio Observations took place on April 8th, 2024 at the University of Central Arkansas campus in Conway, Arkansas at approximately 35°04'51"N 92°27'36"W with an elevation of 94 m.
 We began collecting data at 2460409.2186657293 JD and ended at 2460409.3424835186 JD, or 2024-04-08 17:14:53 UTC and 2024-04-08 20:13:11 UTC.
 The telescope used was a Spider 230C radio telescope, a 2.3 m parabolic dish tuned to the electron spin-flip transition of Hydrogen at 1420 MHz.
@@ -7,17 +6,20 @@ During observation, we encountered minimal cloud cover and no sustained winds.
 Despite this, we did have 3 sources of error: A strong gust of wind pushed the telescope off target for a few seconds, an issue with the accuracy of our polar alignment caused the telescope to be slightly off target by the end of observation, and local sources of interference created noise in the data.
 In order for this raw data to be compared to the optical lightcurve, these errors must be addressed.
 A number of data analysis methods were used to do this:
-%%Image of linear adjustment functino being added to raw data?
 \paragraph{Linear Adjustment function}
-The first step in our data analysis is to correct for the tracking error.
-We found average Analog to Digital Unit (ADU) counts for the duration of time after 4th contact and average ADU counts for the same duration of time before 1st contact.
-We then created a linear function that shifts the data at the end of the lightcurve upward and decreases in effect to 0 at 1st contact.
-%Image of smoothing being done to above image?
+The first step in our data analysis is to correct for the tracking error caused by the gust of wind.
+We assume that this tracking error caused the radio intensity to decrease linearly with time.
+To create this error correction function, we found the slope between a point ~2 minutes before 1st contact and a point ~2 minutes after 4th contact. 
+The sign was then flipped on the slope and combined with the x value of the point at 1st contact in point slope form in Equation \ref{linear_adjustment_function}.
+This function is added to the lighturve to adjust for the tracking error.
+\begin{equation}\label{linear_adjustment_function}
+Y = 128.4(x-2460409.2318317825)
+\end{equation}
+Where $Y$ is the adjustment value and $X$ is the time coordinate of each data point. 
 \paragraph{Smoothing}
 The next step is to smooth the data.
 Our choice to smooth the data came from the need to reduce noise/random spikes in the data to get a better idea of the shape of the curve.
 We chose to apply a Savitzky-Golay filter to do this.
-%Image of normalization being done to above image?
 \paragraph{Normalization}
 The final step is to normalize the data.
 Normalization is the process by which the data of a graph is scaled by a constant such that the highest points are equal to 100, essentially making the data a percentage of its highest value.
