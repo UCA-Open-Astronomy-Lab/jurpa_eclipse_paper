@@ -3,12 +3,13 @@
 In order to check the validity of our livestream-derived optical lightcurve, we needed a way of finding the expected eclipse obscuration percentage over time for our location.
 We used the free, open-source planetarium software \texttt{Stellarium}\cite{zotti_simulated_2020} to achieve this.
 After setting the time, date and location of our radio telescope in \texttt{Stellarium}\cite{zotti_simulated_2020}, we queried the software's API to step the simulation time forward and extracted the eclipse percentage for 1000 points in time, starting before first contact and ending after fourth contact.
-The resulting theoretical lightcurve is overlaid on the eclipse obscuration derived from the UCA Observatory livestream.
+The resulting theoretical lightcurve was then overlaid on the eclipse obscuration derived from the UCA Observatory livestream.
 The agreement between the two is excellent, validating our optical eclipse lightcurve.
+% Shouldn't we have a figure here?
 
 \subsection{\label{sec:theoreticalLightcurves}Theoretical Lightcurve Comparison}
 
-In order to determine the apparent radius of the sun at \unit[1420]{MHz}, we can compare our observed radio lightcurve to a theoretical lightcurve where the radius of the sun has been changed.
+In order to determine the apparent radius of the sun at \unit[1420]{MHz}, we can compare our observed radio lightcurve to a series of theoretical lightcurves where the radius of the sun has been changed.
 To accomplish this, we first downloaded high-accuracy ephemeris data from the JPL Horizons On-Line Ephemeris System \cite{nasa_jpl_solar_system_dynamics_group_jpl_nodate}. 
 Using the angular radii of both the sun and moon along with the angular separation between the two, we calculated the obscured area of the solar disk at 2000 points in time during the eclipse using the geometric relationships shown in Figure \ref{fig:eclipse_geometry}.
 These relationships are also given by Equations 1 through 4.
@@ -37,11 +38,11 @@ These relationships are also given by Equations 1 through 4.
   \includegraphics[width=0.5\textwidth]{figures/RadiovsTheoretical.png}
   \caption{\label{fig:RadiovsTheoretical} A comparison of the smoothed/normalized radio lightcurve and theoretical lightcurves generated with the JPL Horizons ephemeris data.}
 \end{figure}
-
-Using these relationships, we can create theoretical lightcurves for varying solar radii.
-We calculated the obscured area of the solar disk at 2000 points in time during the eclipse.
 Our data found that the radio lightcurve reached a minimum of 30.9\% of the total solar flux during totality, whereas the optical lightcurve reached 0\%.
-Assuming a uniform disk brightness, we created theoretical lightcurves for solar radii ranging from $R = 1.0 R_{\odot}$ to $R = 1.5 R_{\odot}$.
-These theoretical lightcurves, shown in Figure \ref{fig:RadiovsTheoretical}, helped us match the dip in relative difference in brightness within the radio lightcurve.
-Our model does not take into acount the true non-uniformity of the solar surface, nor does it account for limb darkening.
-We found that the best-fit curve has an apparent solar radius of $R_{\mathrm{1420}} = 1.27 R_{\odot}$.
+Using these relationships, we were able to create theoretical lightcurves for varying solar radii from $R = 1.0 R_{\odot}$ to $R = 1.45 R_{\odot}$ by calculating the obscured area of the solar disk at 2000 points in time during the eclipse.
+These theoretical lightcurves, shown in Figure \ref{fig:RadiovsTheoretical}, helped us match the dip in relative difference in brightness within the radio lightcurve, but it was not a perfect match.
+Although the dip in brightness was accurate, the curves show variance in slope.
+The theoretical curves assume a uniform disk brightness, not accounting for sunspots or other solar activity.
+Nor do they account for limb darkening and how that may change as the obscuration changes throughout the eclipse.
+Despite these variances, we found that the best-fit curve has an apparent solar radius of $R_{\mathrm{1420}} = 1.27 R_{\odot}$.
+This lies between the results of $R_{\mathrm{1420}} = 1.14 R_{\odot}$ found by \cite{messerotti_radio_2000}, and $R_{\mathrm{1420}} = 1.4 R_{\odot}$ found by \cite{leung_solar_2022}.
