@@ -14,9 +14,9 @@ To create this error correction function, we found the slope between a point ~2 
 The sign was then flipped on the slope and combined with the x value of the point at 1st contact in point slope form in Equation \ref{linear_adjustment_function}.
 This function is added to the lighturve to adjust for the tracking error.
 \begin{equation}\label{linear_adjustment_function}
-Y = 128.4(x-2460409.2318317825)
+Y = 128.4(t-2460409.2318317825)
 \end{equation}
-Where $Y$ is the adjustment value and $X$ is the time coordinate of each data point. 
+Where $Y$ is the adjustment value and $t$ is the time coordinate of each data point. 
 \paragraph{Smoothing}
 The next step is to smooth the data.
 Our choice to smooth the data came from the need to reduce noise/random spikes in the data to get a better idea of the shape of the curve.
