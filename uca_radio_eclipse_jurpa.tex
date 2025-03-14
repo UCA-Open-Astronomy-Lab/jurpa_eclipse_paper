@@ -1,0 +1,78 @@
+\documentclass[%
+ aip,
+% jmp,
+% bmf,
+% sd,
+% rsi,
+cp,  % Conference Proceedings
+ amsmath,amssymb,%nobibnotes,
+% preprint,%
+ reprint,%
+%author-year,%
+%author-numerical,%
+]{revtex4-2}
+
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%% Loads a Times-like font. You can also load
+%% {newtxtext,newtxtmath}, but not {times}, 
+%% {txfonts} nor {mathtpm} as these packages
+%% are obsolete and have been known to cause problems.
+\usepackage{mathptmx}
+\usepackage{units}
+
+\makeatletter
+\def\cat@comma@active{\catcode`\,12}%
+\makeatother
+
+\begin{document}
+
+\title{Radio Telescope Observations Of The April 8, 2024 Total Solar Eclipse At 1420MHz.}% Force line breaks with \\
+
+\author{August Childress} % Write as First name Surname
+\email[Corresponding author: ]{achildress@cub.uca.edu}
+\affiliation{Department of Physics, Astronomy, and Engineering, University of Central Arkansas, Conway, AR 72035, USA}
+\author{Blayne Griffin}%
+\email{bgriffin13@cub.uca.edu.}
+\affiliation{Department of Physics, Astronomy, and Engineering, University of Central Arkansas, Conway, AR 72035, USA}
+\author{Jeremy Lusk}
+\email{jlusk@uca.edu}
+\affiliation{Department of Physics, Astronomy, and Engineering, University of Central Arkansas, Conway, AR 72035, USA}
+
+\date{\today} % It is always \today, today, but any date may be explicitly specified
+              % Not printed for conference proceedings
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\maketitle
+
+\section{\label{sec:introduction}Introduction}
+\input{sections/introduction}
+
+\section{\label{sec:observations}Observations}
+\input{sections/observations}
+
+\section{\label{sec:theoretical}Theoretical Studies}
+\input{sections/theoretical}
+
+\section{\label{sec:conclusion}Conclusion}
+\input{sections/conclusion}
+
+\begin{acknowledgments}
+\input{sections/acknowledgements}
+\end{acknowledgments}
+
+\nocite{*}
+\bibliography{refs}% Produces the bibliography via BibTeX.
+
+\end{document}
+%
+% ****** End of file aipsamp.tex ******
