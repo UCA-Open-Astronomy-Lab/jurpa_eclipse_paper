@@ -7,8 +7,8 @@ Despite this, we did have 3 sources of error: A strong gust of wind pushed the t
 In order for this raw data to be compared to the optical lightcurve, these errors must be addressed.
 A number of data analysis methods were used to do this:
 \paragraph{Linear Adjustment function}
-The first step in our data analysis is to correct for the tracking error caused by re-targeting the telescope after the gust of wind.
-In our raw radio data, the brightness of the sun after fourth contact is less than the same period just before first contact.
+The first step in our data analysis was to correct for the tracking error caused by re-targeting the telescope after the gust of wind.
+In our raw radio data, the brightness of the sun after fourth contact was less than the same period just before first contact.
 This indicated that the tracking had become inaccurate.
 We assume that this tracking error caused the radio intensity to decrease linearly with time.
 To create this error correction function, we found the slope between a point around 2 minutes before 1st contact and a point around 2 minutes after 4th contact. 
@@ -33,7 +33,7 @@ The smoothed and normalized data can be seen in Figure \ref{fig:LightcurveCompar
 %% Put combined firue here, and adjust width to keep us at 4 pages
 \begin{figure}[h]
     \includegraphics[width=0.93\textwidth]{figures/LightcurveComparison.pdf}
-    \caption{\label{fig:LightcurveComparison} A comparison of the smoothed/normalized radio lightcurve, the normalized optical lightcurve generated from the livestream, the lightcurve generated from the light sensor, and a theoretical lightcurve generated from the software \texttt{Stellarium}.}
+    \caption{\label{fig:LightcurveComparison} A comparison of the smoothed/normalized radio lightcurve, the normalized optical lightcurve generated from the livestream, the lightcurve generated from the light sensor, and a theoretical lightcurve generated from the software \texttt{Stellarium}. Vertical lines show first through fourth contact.}
 \end{figure}
 
 %\begin{figure}
@@ -50,7 +50,7 @@ Fortunately, Dr. Scott Austin used the UCA observatory across the street from ou
 Another experiment near our location, led by Dr. Todd Abel and UCA Student Shane Ayotte, used a Vernier Light Sensor (LS-BTA) pointed straight up at the sky to measure overall sky brightness.
 \paragraph{The Livestream Lightcurve}
 The livestream of the solar eclipse was captured by Dr. Scott Austin using a Sony Alpha 6400 camera with a Sony FE 24mm-240mm f/3.5-6.3 lens and NiSi Solar Filter Pro Nan UV/IR Cut ND 100000 72mm filter.
-This solar filter was removed during totality, marked by 2460409.2849 JD and 2460409.2884 JD.
+This solar filter was removed during totality, marked by vertical lines at 2460409.2849 JD and 2460409.2884 JD.
 This setup was attached to a Meade-14 LX200R on a Paramount MX+ equatorial mount to track the sun across the sky.
 To transform the livestream into a lightcurve, we needed to extract the percentage of the sun's disk visible in the video frames as the eclipse progressed.
 We accomplished this by first grayscaling the image of the eclipse and then using Otsu thresholding to only count pixels above a certain value.
