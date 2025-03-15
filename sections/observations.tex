@@ -8,9 +8,10 @@ In order for this raw data to be compared to the optical lightcurve, these error
 A number of data analysis methods were used to do this:
 \paragraph{Linear Adjustment function}
 The first step in our data analysis is to correct for the tracking error caused by re-targeting the telescope after the gust of wind.
-In our raw radio data, the brightness of the sun after fourth contact is less than the same period just before first contact -- indicating that the telescope was not tracking the sun across the sky perfectly accurately.
+In our raw radio data, the brightness of the sun after fourth contact is less than the same period just before first contact.
+This indicated that the tracking had become inaccurate.
 We assume that this tracking error caused the radio intensity to decrease linearly with time.
-To create this error correction function, we found the slope between a point ~2 minutes before 1st contact and a point ~2 minutes after 4th contact. 
+To create this error correction function, we found the slope between a point around 2 minutes before 1st contact and a point around 2 minutes after 4th contact. 
 The sign was then flipped on the slope and combined with the x value of the point at 1st contact in point slope form in Equation \ref{linear_adjustment_function}.
 This function is added to the lighturve to adjust for the tracking error.
 \begin{equation}\label{linear_adjustment_function}
@@ -44,8 +45,8 @@ The smoothed and normalized data can be seen in Figure \ref{fig:LightcurveCompar
 \subsection{\label{sec:optical}The Optical Lightcurve}
 
 To better understand the features of our radio data, we need an optical lightcurve for comparison.
-Ideally, the optical lightcurve would be observed from the same location as our radio telescope in order for us to compare contact times, the depth of the eclipse, and the shape of the lightcurve
-Fortunately, Dr. Scott Austin used the UCA observatory across the street from our location to livestream the eclipse using a solar filter-equipped camera connected to the observatory telescope.
+Ideally, the optical lightcurve would be observed from the same location as our radio telescope in order for us to compare contact times, the depth of the eclipse, and the shape of the lightcurve.
+Fortunately, Dr. Scott Austin used the UCA observatory across the street from our location to livestream the eclipse using a solar filter-equipped camera mounted to the observatory telescope.
 Another experiment near our location led by Dr. Todd Abel and UCA Student Shane Ayotte used a Vernier Light Sensor (LS-BTA) pointed straight up at the sky to measure overall sky brightness.
 \paragraph{The Livestream Lightcurve}
 The livestream of the solar eclipse was captured by Dr. Scott Austin using a Sony Alpha 6400 camera with a Sony FE 24mm-240mm f/3.5-6.3 lens and NiSi Solar Filter Pro Nan UV/IR Cut ND 100000 72mm filter.
@@ -53,7 +54,7 @@ This solar filter was removed during totality, marked by 2460409.2849 JD and 246
 This setup was attached to a Meade-14 LX200R on a Paramount MX+ equatorial mount to track the sun across the sky.
 To transform the livestream into a lightcurve, we needed to extract the percentage of the sun's disk visible in the video frames as the eclipse progressed.
 We accomplished this by first grayscaling the image of the eclipse and then using Otsu thresholding to only count pixels above a certain value.
-This sucessfully counts the bright sun pixels while ignoring the background noise.
+This sucessfully counted the bright sun pixels while ignoring the background noise.
 To get the time for each data point, we took an image of the in-video clock at the same time we counted the pixels of the eclipse and used computer vision to recognise the characters in the clock, giving us the time at which the frame was pixel-counted.
 The number of pixels of the solar disk over time can then be normalized to a relative brightness.
 \paragraph{The Light Sensor Lightcurve}
