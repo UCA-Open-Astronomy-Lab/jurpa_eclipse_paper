@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{units}
 \begin{document}
 
 We are greatful to the reviewer for their insightful suggestions to improve our manuscript.
@@ -51,6 +52,55 @@ From the reviewer:
 \end{quote}
 
 \noindent We have included the following reference: N. Otsu, “A threshold selection method from gray-level histograms,” IEEE Transactions on Systems, Man, and Cybernetics 9, 62–66 (1979)
+
+\section{Model matching}
+
+From the reviewer:
+
+\begin{quote}
+  It is not clear if the ``best fit curve'' was determined numerically or by eye
+\end{quote}
+
+\noindent The model was fit ``by eye.'' The following is not included in the theoretical lightcurve comparison section:
+
+\begin{quote}
+  \input{sections/model_matching.tex}
+\end{quote}
+
+From the reviewer:
+
+\begin{quote}
+
+  The variance in slope is particularly interesting! Is this also seen elsewhere in the literature?
+
+\end{quote}
+
+\noindent We have modified the conclusion as follows:
+
+\begin{quote}
+  \input{sections/model_slope.tex}
+\end{quote}
+
+\section{Comparison with other works}
+
+From the reviewer:
+
+\begin{quote}
+  It is not clear why References 4 and 5 were chosen as the only reference points.
+  I suspect it is because they were also measured at 1420 MHz and during a solar eclipse. If this is the case, it should be stated.
+\end{quote}
+
+\noindent We have included the following to the theoretical lightcurve comparison section
+
+\begin{quote}
+  \input{sections/comparison_sources.tex}
+\end{quote}
+  
+
+
+
+\bibliography{refs}% Produces the bibliography via BibTeX.
+\bibliographystyle{plain}
 
 \end{document}
 
