@@ -11,7 +11,7 @@ This indicated that the tracking had become inaccurate.
 We assume that this tracking error caused the radio intensity to decrease linearly with time.
 To create this error correction function, we found the slope between a point around 2 minutes before 1st contact and a point around 2 minutes after 4th contact. 
 The sign was then flipped on the slope and combined with the x value of the point at 1st contact in point slope form.
-This function was added to the lighturve to adjust for the tracking error.
+This function was added to the lightcurve to adjust for the tracking error.
 %\begin{equation}\label{linear_adjustment_function}
 %Y = 128.4(t-2460409.2318317825)
 %\end{equation}
@@ -29,7 +29,7 @@ The smoothed and normalized data can be seen in Figure \ref{fig:LightcurveCompar
 
 %% Put combined firue here, and adjust width to keep us at 4 pages
 \begin{figure}[h]
-    \includegraphics[width=0.93\textwidth]{figures/LightcurveComparison.pdf}
+    \includegraphics[width=0.9\textwidth]{figures/LightcurveComparison.pdf}
     \caption{\label{fig:LightcurveComparison} A comparison of the smoothed/normalized radio lightcurve, the normalized optical lightcurve generated from the livestream, the lightcurve generated from the light sensor, and a theoretical lightcurve generated from the software \texttt{Stellarium}. Vertical lines show first through fourth contact. \protect\input{sections/wind.tex}.}
 \end{figure}
 
@@ -58,6 +58,6 @@ The number of pixels of the solar disk over time can then be normalized to a rel
 The light sensor used to collect data during the solar eclipse was the Vernier Light Sensor (LS-BTA) pointed at the sky.
 Dr. Todd Abel and Shane Ayotte provided the light sensor data, which we normalized to relative brightness.
 Because the light sensor data had timestamps included, we used it to confirm the timing accuracy of our other lightcurves.
-\\
+
 Figure \ref{fig:LightcurveComparison} shows the observed lightcurves and a theoretical lightcurve generated from the software \texttt{Stellarium}\cite{zotti_simulated_2020}, where we observed that all three optical lightcurves had a very similar shape with heavy overlap between the theoretical and livestream lightcurves.
 This implies that our optical lightcurves are accurate and can be used to compare with our radio lightcurve to determine the size of the sun's radio emission.
