@@ -20,8 +20,9 @@ This function was added to the lighturve to adjust for the tracking error.
 \paragraph{Smoothing}
 The next step is to smooth the data.
 Our choice to smooth the data came from the need to reduce noise/random spikes in the data to get a better idea of the shape of the curve.
-We chose to apply a Savitzky-Golay filter \cite{savitzky_golay_1964} to do this. 
-This method was used because of the lack of edge effects by atrificially extending the data, letting the filter be applied over the entire lightcurve.
+We chose to apply a Savitzky-Golay filter \cite{savitzky_golay_1964} to do this.
+\input{savitsky_golay.tex}
+
 \paragraph{Normalization}
 The final step is to normalize the data.
 Normalization is the process by which the data of a graph is scaled by a constant such that the highest points are equal to 100, essentially making the data a percentage of its highest value.
