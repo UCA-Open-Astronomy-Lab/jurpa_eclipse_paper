@@ -51,8 +51,8 @@ This solar filter was removed during totality, marked by vertical lines at 24604
 This setup was attached to a Meade-14 LX200R on a Paramount MX+ equatorial mount to track the sun across the sky.
 To transform the livestream into a lightcurve, we needed to extract the percentage of the sun's disk visible in the video frames as the eclipse progressed.
 We accomplished this by first grayscaling the image of the eclipse and then using Otsu thresholding \cite{otsu_1979} to only count pixels above a certain value.
-This sucessfully counted the bright sun pixels while ignoring the background noise.
-To get the time for each data point, we took an image of the in-video clock at the same time we counted the pixels of the eclipse and used computer vision to recognise the characters in the clock, giving us the time at which the frame was pixel-counted.
+This successfully counted the bright sun pixels while ignoring the background noise.
+To get the time for each data point, we took an image of the in-video clock at the same time we counted the pixels of the eclipse and used computer vision to recognize the characters in the clock, giving us the time at which the frame was pixel-counted.
 The number of pixels of the solar disk over time can then be normalized to a relative brightness.
 \paragraph{The Light Sensor Lightcurve}
 The light sensor used to collect data during the solar eclipse was the Vernier Light Sensor (LS-BTA) pointed at the sky.
