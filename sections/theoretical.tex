@@ -4,7 +4,7 @@ In order to check the validity of our livestream-derived optical lightcurve, we 
 We used the free, open-source planetarium software \texttt{Stellarium}\cite{zotti_simulated_2020} to achieve this.
 After setting the time, date, and location of our radio telescope in \texttt{Stellarium}, we queried the software's API to step the simulation time forward and extracted the eclipse percentage for 1000 points in time, starting before first contact and ending after fourth contact.
 The resulting theoretical lightcurve was then overlaid on the eclipse obscuration derived from the UCA Observatory livestream.
-The agreement between the two is excellent, as shown in Figure \ref{fig:LightcurveComparison}, validating our optical eclipse lightcurve.
+The agreement between the two is excellent, as shown in Figure \ref{fig:LightcurveComparison}.
 
 \subsection{\label{sec:theoreticalLightcurves}Theoretical Lightcurve Comparison}
 
@@ -15,7 +15,7 @@ These relationships are also given by Equations \ref{eq:geometry_1} through \ref
 
 \begin{figure}
 \begin{minipage}{0.49\textwidth}
-  \includegraphics[width=0.75\textwidth]{figures/drawing_updated}
+  \includegraphics[width=0.65\textwidth]{figures/drawing_updated}
   \caption{\label{fig:eclipse_geometry} The geometric relationships used to calculate the obscuration of the sun. The percent obscuration is found by dividing the combined area $A_1 + A_2$ by the apparent area of the sun's disk $\pi R_\odot^2$.}
 \end{minipage}
 \hfill
@@ -38,7 +38,7 @@ These relationships are also given by Equations \ref{eq:geometry_1} through \ref
 
 
 \begin{figure}
-  \includegraphics[width=0.93\textwidth]{figures/RadiovsTheoretical}
+  \includegraphics[width=0.9\textwidth]{figures/RadiovsTheoretical}
   \caption{\label{fig:RadiovsTheoretical} A comparison of the smoothed/normalized radio lightcurve and theoretical lightcurves generated with the JPL Horizons ephemeris data. Our best fit to the depth of the radio lightcurve has an apparent solar radius of $1.27 R_{\odot}$}
 \end{figure}
 
