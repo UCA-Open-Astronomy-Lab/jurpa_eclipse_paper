@@ -2,7 +2,7 @@
 \begin{document}
 
 We are greatful to the reviewer for their insightful suggestions to improve our manuscript.
-Included below are summaries of the reviewer's suggested changes, and our modifications to the manuscript.
+Included below are the the reviewer's suggested changes, and our modifications to the manuscript.
 
 \section{Savitsky-Golay filtering}
 
@@ -12,10 +12,45 @@ From the reviewer:
 The authors also use a well-tested filtering method for accounting for interference.
 I am curious, though, why was this method chosen over others? I suspect it may be that it is straightforward, which reduces the possibility of introducing more errors and biases, but it is not clear.
 \end{quote}
-\noindent We have added the following:
+\noindent We have added the following to our description of the filtering method used:
 
 \begin{quote}
   \input{sections/savitsky_golay.tex}
 \end{quote}
 
+
+
+\section{Wind gust}
+
+From the reviewer:
+
+\begin{quote}
+  Although a ``gust of wind'' is mentioned, it is not clearly indicated in the data when that gust occurred, so it would be helpful to point that out if the timing is known.
+\end{quote}
+
+\noindent To address this issue, we have modified the caption of Figure 1 to indicate the timing of the wind gust:
+
+\begin{quote}
+  \input{sections/wind.tex}
+\end{quote}
+
+\noindent From the reviewer:
+
+\begin{quote}
+  Although something like that may not be possible to correct in the data analysis, it may be worth re-mentioning in the discussion where the radio light curve is compared to the theoretical curve.
+\end{quote}
+
+\noindent Because the wind gust occurred before the radio and optical lightcurves began to diverge, we have opted not to include further discussion of the wind gust in our comparison with theoretical lightcurves.
+
+\section{Otsu thresholding}
+
+From the reviewer:
+
+\begin{quote}
+  I would suggest, however, including a reference or very brief definition of Otsu thresholding.
+\end{quote}
+
+\noindent We have included the following reference: N. Otsu, “A threshold selection method from gray-level histograms,” IEEE Transactions on Systems, Man, and Cybernetics 9, 62–66 (1979)
+
 \end{document}
+
